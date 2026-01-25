@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
+    RouterLink,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
@@ -18,4 +19,14 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class App {
   protected readonly title = signal('Enterprise_Access_Request_System');
+  navLinks = [
+    {
+      label: 'Dashboard',
+      path: '/admin'
+    },
+    {
+      label: 'Requests',
+      path: '/requests'
+    },
+  ]
 }
